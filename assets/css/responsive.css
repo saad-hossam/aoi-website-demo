@@ -8,7 +8,8 @@
 @media (max-width: 575.98px) {
   .utility-links { gap: var(--space-3); }
   .utility-links li:nth-child(n+2) { display: none; } /* keep bar compact */
-  .social-links li:nth-child(n+3) { display: none; }
+  /* keep all social icons on mobile */
+  /* .social-links li:nth-child(n+3) { display: none; } */
 
   .hero { min-height: 520px; }
   .hero__content { padding-block: var(--space-8); }
@@ -130,4 +131,17 @@ html[dir="rtl"] .dropdown-menu-end-ltr { left: auto; right: 0; }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal, .reveal-stagger > * { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
+/* Utility bar mobile safety */
+@media (max-width: 767.98px) {
+  .utility-bar {
+    height: auto !important;
+    min-height: 0;
+    overflow: visible;
+  }
+  .utility-bar__inner {
+    height: auto !important;
+    min-height: 0;
+  }
 }

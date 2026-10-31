@@ -506,7 +506,7 @@ section { scroll-margin-top: 6.5rem; }
 }
 
 @media (max-width: 575.98px) {
-  .utility-bar__inner { min-height: 2.2rem; }
+  .utility-bar__inner { min-height: auto; }
   .utility-links { gap: .55rem; }
   .utility-links a { font-size: .72rem; }
   .utility-actions { gap: .5rem; }

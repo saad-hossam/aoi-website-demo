@@ -283,7 +283,8 @@ html[dir="ltr"] .link-arrow:hover i { transform: translateX(4px); }
   background: var(--aoi-navy);
   color: rgba(255, 255, 255, 0.85);
   font-size: var(--fs-xs);
-  height: var(--header-utility-h);
+  min-height: var(--header-utility-h);
+  height: auto;
   display: flex;
   align-items: center;
 }
