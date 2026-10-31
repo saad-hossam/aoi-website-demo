@@ -1,0 +1,131 @@
+/* ============================================================
+   AOI Frontend — history.css
+   History page-specific compositions. Extends the Phase 2
+   .timeline base. All tokens come from style.css.
+   ============================================================ */
+
+/* ---------- Vertical timeline (history) ---------- */
+.history-timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  max-width: 880px;
+  margin-inline: auto;
+}
+.history-timeline::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 20px;
+  inset-block: 0;
+  width: 2px;
+  background: var(--aoi-border);
+}
+.history-timeline__item {
+  position: relative;
+  padding-inline-start: var(--space-7);
+  padding-block: var(--space-4);
+  margin-bottom: var(--space-2);
+  border-radius: var(--radius-md);
+  transition: background var(--t-base);
+}
+.history-timeline__item::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 13px;
+  inset-block-start: 26px;
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-pill);
+  background: var(--aoi-primary);
+  border: 3px solid var(--aoi-white);
+  box-shadow: 0 0 0 2px var(--aoi-primary);
+  transition: transform var(--t-base);
+  z-index: 2;
+}
+.history-timeline__item:hover::before,
+.history-timeline__item.is-active::before {
+  transform: scale(1.2);
+  background: var(--aoi-gold);
+  box-shadow: 0 0 0 2px var(--aoi-gold);
+}
+.history-timeline__item:hover,
+.history-timeline__item.is-active {
+  background: var(--aoi-light);
+}
+
+.history-timeline__year {
+  display: inline-block;
+  font-weight: 800;
+  font-size: var(--fs-lg);
+  color: var(--aoi-primary);
+  background: rgba(13, 71, 161, 0.08);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  margin-bottom: var(--space-2);
+  font-variant-numeric: tabular-nums;
+}
+.history-timeline__item.is-active .history-timeline__year {
+  background: var(--aoi-primary);
+  color: #fff;
+}
+.history-timeline__title {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  margin: 0 0 var(--space-2);
+  color: var(--aoi-text);
+}
+.history-timeline__body {
+  color: var(--aoi-text);
+  font-size: var(--fs-sm);
+  line-height: 1.75;
+  margin: 0;
+}
+.history-timeline__source {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-xs);
+  color: var(--aoi-muted);
+  margin-top: var(--space-2);
+  font-style: italic;
+}
+.history-timeline__source i { color: var(--aoi-gold); }
+
+/* ---------- Empty state (history) ---------- */
+.history-empty {
+  text-align: center;
+  padding: var(--space-9) var(--space-4);
+  border: 1px dashed var(--aoi-border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--aoi-white);
+  max-width: 720px;
+  margin-inline: auto;
+}
+.history-empty__icon {
+  font-size: 3rem;
+  color: var(--aoi-primary);
+  opacity: 0.5;
+  margin-bottom: var(--space-4);
+}
+.history-empty__title {
+  font-size: var(--fs-xl);
+  font-weight: 800;
+  margin-bottom: var(--space-2);
+}
+.history-empty__text {
+  color: var(--aoi-muted);
+  font-size: var(--fs-base);
+  line-height: 1.75;
+  max-width: 55ch;
+  margin: 0 auto var(--space-4);
+}
+
+/* ---------- Anchor strip for jumping between decades ---------- */
+.history-anchors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  justify-content: center;
+  margin-bottom: var(--space-6);
+}

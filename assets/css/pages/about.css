@@ -1,0 +1,168 @@
+/* ============================================================
+   AOI Frontend — about.css
+   Phase 12 additions to the About page. Existing Phase 2
+   structures (.about-intro-grid, .mv-grid, .values-grid,
+   .timeline) live in pages.css and are NOT redefined here.
+   This file adds the new Phase 12 block compositions only.
+   ============================================================ */
+
+/* ---------- Editorial split (text + image) ---------- */
+.about-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  align-items: center;
+}
+@media (min-width: 992px) {
+  .about-split { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: var(--space-7); }
+  .about-split--reverse { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); }
+  .about-split--reverse .about-split__text { order: 2; }
+  .about-split--reverse .about-split__media { order: 1; }
+}
+.about-split + .about-split { margin-top: var(--space-7); }
+
+.about-split__media {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--aoi-navy), var(--aoi-primary-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 3rem;
+  box-shadow: var(--aoi-shadow-md);
+  position: relative;
+}
+.about-split__media img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.about-split__media::after {
+  content: "";
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline: 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(17, 18, 20, 0.35), transparent);
+  pointer-events: none;
+}
+
+/* ---------- Cross-link panel (reused from Phase 5 pattern) ---------- */
+.about-crosslinks {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+@media (min-width: 576px) {
+  .about-crosslinks { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 992px) {
+  .about-crosslinks { grid-template-columns: repeat(4, 1fr); }
+}
+.about-crosslink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid var(--aoi-border);
+  border-radius: var(--radius-md);
+  background: var(--aoi-white);
+  color: var(--aoi-text);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  transition: border-color var(--t-base), box-shadow var(--t-base), transform var(--t-base);
+}
+.about-crosslink:hover,
+.about-crosslink:focus-visible {
+  border-color: var(--aoi-primary);
+  box-shadow: var(--aoi-shadow-sm);
+  transform: translateY(-2px);
+  color: var(--aoi-primary);
+}
+.about-crosslink__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: rgba(13, 71, 161, 0.08);
+  color: var(--aoi-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.about-crosslink__arrow {
+  margin-inline-start: auto;
+  color: var(--aoi-gold);
+  font-size: 0.875rem;
+  transition: transform var(--t-base);
+}
+.about-crosslink:hover .about-crosslink__arrow { transform: translateX(-4px); }
+html[dir="ltr"] .about-crosslink:hover .about-crosslink__arrow { transform: translateX(4px); }
+
+/* ---------- Anchor nav strip ---------- */
+.about-anchors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+.about-anchor {
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--aoi-border);
+  border-radius: var(--radius-pill);
+  background: var(--aoi-white);
+  color: var(--aoi-text);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color var(--t-fast), color var(--t-fast), background var(--t-fast);
+}
+.about-anchor:hover,
+.about-anchor:focus-visible {
+  border-color: var(--aoi-primary);
+  color: var(--aoi-primary);
+}
+
+/* ---------- Timeline preview (homepage-style teaser) ---------- */
+.about-timeline-preview {
+  background: var(--aoi-light);
+  border: 1px solid var(--aoi-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+.about-timeline-preview .timeline { margin-top: var(--space-4); }
+
+/* ---------- Org-structure preview card on About ---------- */
+.about-org-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  background: var(--aoi-white);
+  border: 1px solid var(--aoi-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--aoi-shadow-sm);
+}
+.about-org-card__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: var(--aoi-primary);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.375rem;
+}
+.about-org-card__title {
+  font-size: var(--fs-xl);
+  font-weight: 800;
+  margin: 0;
+}
+.about-org-card__text {
+  color: var(--aoi-muted);
+  font-size: var(--fs-sm);
+  line-height: 1.7;
+  margin: 0;
+}

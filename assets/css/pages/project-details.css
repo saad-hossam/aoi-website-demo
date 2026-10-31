@@ -1,0 +1,261 @@
+/* ============================================================
+   AOI Frontend — project-details.css
+   Uses shared tokens. Mirrors product-details.css composition
+   (grid, gallery, sections) with project-specific labels.
+   ============================================================ */
+
+.pj-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+@media (min-width: 992px) {
+  .pj-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: var(--space-7); }
+}
+
+/* ---------- Gallery ---------- */
+.pj-gallery {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.pj-gallery__main {
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, var(--aoi-navy), var(--aoi-primary-dark));
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 3.5rem;
+  box-shadow: var(--aoi-shadow-md);
+}
+.pj-gallery__main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity var(--t-base);
+}
+.pj-gallery__thumbs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+  gap: var(--space-2);
+}
+.pj-thumb {
+  aspect-ratio: 1 / 1;
+  border: 2px solid var(--aoi-border);
+  border-radius: var(--radius-sm);
+  background: var(--aoi-light);
+  overflow: hidden;
+  cursor: pointer;
+  padding: 0;
+  transition: border-color var(--t-fast), transform var(--t-fast);
+}
+.pj-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.pj-thumb:hover { border-color: var(--aoi-primary); }
+.pj-thumb.is-active { border-color: var(--aoi-gold); transform: translateY(-2px); }
+.pj-thumb:focus-visible { outline: 2px solid var(--aoi-gold); outline-offset: 2px; }
+
+/* ---------- Info column ---------- */
+.pj-info__eyebrow {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--aoi-gold);
+  margin-bottom: var(--space-2);
+  display: block;
+}
+.pj-info__title {
+  font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  font-weight: 800;
+  line-height: 1.25;
+  margin: 0 0 var(--space-3);
+}
+.pj-info__lead {
+  color: var(--aoi-muted);
+  font-size: var(--fs-base);
+  line-height: 1.75;
+  margin: 0 0 var(--space-5);
+}
+
+/* Facts row (location / status / dates) */
+.pj-facts {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: var(--aoi-border);
+  border: 1px solid var(--aoi-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-top: var(--space-4);
+}
+@media (min-width: 576px) {
+  .pj-facts { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 992px) {
+  .pj-facts { grid-template-columns: repeat(3, 1fr); }
+}
+.pj-fact {
+  background: var(--aoi-white);
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+.pj-fact__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-pill);
+  background: rgba(13, 71, 161, 0.08);
+  color: var(--aoi-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 0.875rem;
+}
+.pj-fact__label {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--aoi-muted);
+}
+.pj-fact__value {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--aoi-text);
+}
+
+/* Actions */
+.pj-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--aoi-border);
+}
+
+/* Sections */
+.pj-section {
+  margin-top: var(--space-7);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--aoi-border);
+}
+.pj-section__title {
+  font-size: var(--fs-xl);
+  font-weight: 800;
+  margin: 0 0 var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+.pj-section__title i {
+  color: var(--aoi-gold);
+  font-size: 1rem;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-pill);
+  background: rgba(212, 166, 79, 0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.pj-section__text {
+  color: var(--aoi-text);
+  font-size: var(--fs-base);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.pj-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--space-3);
+}
+.pj-list li {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  color: var(--aoi-text);
+  font-size: var(--fs-base);
+  line-height: 1.7;
+}
+.pj-list li::before {
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: var(--aoi-gold);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.pj-specs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: var(--aoi-border);
+  border: 1px solid var(--aoi-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+@media (min-width: 576px) {
+  .pj-specs { grid-template-columns: repeat(2, 1fr); }
+}
+.pj-spec {
+  background: var(--aoi-white);
+  padding: var(--space-4) var(--space-5);
+}
+.pj-spec__label {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--aoi-muted);
+  margin-bottom: var(--space-1);
+}
+.pj-spec__value {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--aoi-text);
+}
+
+/* Missing state */
+.pj-missing {
+  text-align: center;
+  padding: var(--space-9) var(--space-4);
+  border: 1px dashed var(--aoi-border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--aoi-white);
+}
+.pj-missing__icon {
+  font-size: 3rem;
+  color: var(--aoi-muted);
+  opacity: 0.5;
+  margin-bottom: var(--space-4);
+}
+.pj-missing__title {
+  font-size: var(--fs-xl);
+  font-weight: 800;
+  margin-bottom: var(--space-2);
+}
+.pj-missing__text {
+  color: var(--aoi-muted);
+  max-width: 50ch;
+  margin: 0 auto var(--space-5);
+}
+
+/* Related */
+.pj-related {
+  margin-top: var(--space-8);
+  padding-top: var(--space-7);
+  border-top: 1px solid var(--aoi-border);
+}

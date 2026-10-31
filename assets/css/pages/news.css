@@ -1,0 +1,209 @@
+/* ============================================================
+   AOI Frontend — news.css
+   News listing page. Reuses shared listing chrome classes
+   (.products-toolbar, .chip-row, .pager-btn, .filter-pill,
+   .products-count, .products-empty) so it feels identical to
+   Products/Projects. Adds featured-news and news-card styles.
+   ============================================================ */
+
+/* ---------- News card ---------- */
+.news-tile {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--aoi-white);
+  border: 1px solid var(--aoi-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  color: var(--aoi-text);
+  transition: transform var(--t-base), box-shadow var(--t-base), border-color var(--t-base);
+}
+.news-tile:hover,
+.news-tile:focus-within {
+  transform: translateY(-3px);
+  box-shadow: var(--aoi-shadow-md);
+  border-color: var(--aoi-primary);
+}
+.news-tile__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(135deg, var(--aoi-navy), var(--aoi-primary-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 2.5rem;
+  overflow: hidden;
+}
+.news-tile__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 900ms ease;
+}
+.news-tile:hover .news-tile__media img { transform: scale(1.06); }
+.news-tile__badge {
+  position: absolute;
+  inset-block-start: var(--space-3);
+  inset-inline-start: var(--space-3);
+  background: var(--aoi-navy);
+  color: #fff;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  opacity: 0.92;
+}
+.news-tile__body {
+  padding: var(--space-5);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.news-tile__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  font-size: var(--fs-xs);
+  color: var(--aoi-muted);
+}
+.news-tile__meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.news-tile__meta i { color: var(--aoi-gold); }
+.news-tile__category {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--aoi-gold);
+}
+.news-tile__title {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.35;
+}
+.news-tile__title a { color: inherit; }
+.news-tile__title a:hover { color: var(--aoi-primary); }
+.news-tile__text {
+  color: var(--aoi-muted);
+  font-size: var(--fs-sm);
+  margin: 0;
+  flex: 1;
+}
+.news-tile__cta {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--aoi-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+.news-tile__cta i { transition: transform var(--t-base); }
+.news-tile:hover .news-tile__cta i { transform: translateX(-4px); }
+html[dir="ltr"] .news-tile:hover .news-tile__cta i { transform: translateX(4px); }
+
+/* ---------- Featured news ---------- */
+.featured-news {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  align-items: center;
+  background: var(--aoi-white);
+  border: 1px solid var(--aoi-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--space-7);
+  box-shadow: var(--aoi-shadow-sm);
+}
+@media (min-width: 992px) {
+  .featured-news { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 0; }
+}
+.featured-news__media {
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(135deg, var(--aoi-navy), var(--aoi-primary-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 3.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.featured-news__media img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 900ms ease;
+}
+.featured-news:hover .featured-news__media img { transform: scale(1.03); }
+.featured-news__badge {
+  position: absolute;
+  inset-block-start: var(--space-4);
+  inset-inline-start: var(--space-4);
+  background: var(--aoi-gold);
+  color: var(--aoi-navy);
+  font-size: var(--fs-xs);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+}
+.featured-news__body {
+  padding: var(--space-6);
+}
+.featured-news__eyebrow {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--aoi-gold);
+  margin-bottom: var(--space-3);
+  display: block;
+}
+.featured-news__title {
+  font-size: clamp(1.375rem, 1.1rem + 1vw, 1.875rem);
+  font-weight: 800;
+  line-height: 1.3;
+  margin: 0 0 var(--space-3);
+}
+.featured-news__title a { color: inherit; }
+.featured-news__title a:hover { color: var(--aoi-primary); }
+.featured-news__excerpt {
+  color: var(--aoi-muted);
+  font-size: var(--fs-base);
+  line-height: 1.75;
+  margin: 0 0 var(--space-5);
+}
+.featured-news__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+/* ---------- News search toolbar (extends .products-toolbar) ---------- */
+/* No extra styles needed — .products-toolbar / .products-search /
+   .products-sort / .products-count already styled by products.css.
+   This file only ensures the id-based search visually aligns here. */
+
+/* Stronger filter layout overrides for news page */
+.news-page .list-filters,
+.section .list-filters {
+  margin-top: .25rem;
+}
+#news-chips.chip-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: .5rem !important;
+}
+#news-chips .chip {
+  width: auto !important;
+  flex: 0 0 auto !important;
+}

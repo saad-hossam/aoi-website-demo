@@ -1,0 +1,134 @@
+/* ============================================================
+   AOI Frontend — Page-scoped styles (Phase 1)
+   Reserved for page-specific compositions. Kept intentionally
+   small in Phase 1; future pages will add styles here.
+   ============================================================ */
+
+/* Reserved for future page-specific hero variants, listing grids,
+   and detail pages. Placeholder block to keep file structure
+   meaningful while remaining essentially empty in Phase 1. */
+
+/* e.g., .page-hero--inner { ... } */
+
+/* ============================================================
+   AOI Frontend — Phase 2 page-scoped styles
+   Compositions specific to About, Chairman, Former Chairmen,
+   Industrial Fields. Shared tokens & components live in
+   style.css.
+   ============================================================ */
+
+/* -------- About page -------- */
+.about-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  align-items: center;
+}
+@media (min-width: 992px) {
+  .about-intro-grid { grid-template-columns: 1fr 1fr; gap: var(--space-7); }
+}
+.about-intro-grid__media {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--aoi-navy), var(--aoi-primary-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 3rem;
+  box-shadow: var(--aoi-shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+.about-intro-grid__media img { width: 100%; height: 100%; object-fit: cover; }
+
+.mv-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+@media (min-width: 768px) {
+  .mv-grid { grid-template-columns: 1fr 1fr; gap: var(--space-5); }
+}
+.mv-card {
+  padding: var(--space-6);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--aoi-border);
+  background: var(--aoi-white);
+  position: relative;
+  overflow: hidden;
+}
+.mv-card--vision { background: var(--aoi-navy); color: rgba(255, 255, 255, 0.85); border-color: transparent; }
+.mv-card--vision .mv-card__title { color: #fff; }
+.mv-card--vision .mv-card__text { color: rgba(255, 255, 255, 0.75); }
+.mv-card__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  background: var(--aoi-gold);
+  color: var(--aoi-navy);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin-bottom: var(--space-4);
+}
+.mv-card__title { font-size: var(--fs-xl); font-weight: 800; margin: 0 0 var(--space-3); }
+.mv-card__text { color: var(--aoi-muted); margin: 0; }
+
+/* -------- Chairman page -------- */
+.chairman-bio p { color: var(--aoi-text); }
+.chairman-placeholder-note {
+  margin-top: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  background: rgba(212, 166, 79, 0.1);
+  border-inline-start: 3px solid var(--aoi-gold);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-sm);
+  color: var(--aoi-text);
+}
+
+/* -------- Industrial Fields page -------- */
+.fields-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-6);
+}
+.fields-search {
+  position: relative;
+  flex: 1;
+  min-width: 260px;
+  max-width: 420px;
+}
+.fields-search input {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  padding-inline-start: 44px;
+  border: 1px solid var(--aoi-border);
+  border-radius: var(--radius-sm);
+  background: var(--aoi-white);
+  color: var(--aoi-text);
+  font-size: var(--fs-sm);
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+}
+.fields-search input:focus {
+  outline: none;
+  border-color: var(--aoi-primary);
+  box-shadow: 0 0 0 3px rgba(13, 71, 161, 0.15);
+}
+.fields-search i {
+  position: absolute;
+  inset-inline-start: var(--space-4);
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+  color: var(--aoi-muted);
+  pointer-events: none;
+}
+.fields-count {
+  font-size: var(--fs-sm);
+  color: var(--aoi-muted);
+}
+.fields-count strong { color: var(--aoi-primary); }

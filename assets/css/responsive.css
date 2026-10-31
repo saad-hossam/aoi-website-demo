@@ -1,0 +1,133 @@
+/* ============================================================
+   AOI Frontend — Responsive refinements (mobile-first tuning)
+   ============================================================ */
+
+/* Mobile-first tweaks below; then min-width overrides */
+
+/* -------- ≤ 575px (small mobile) -------- */
+@media (max-width: 575.98px) {
+  .utility-links { gap: var(--space-3); }
+  .utility-links li:nth-child(n+2) { display: none; } /* keep bar compact */
+  .social-links li:nth-child(n+3) { display: none; }
+
+  .hero { min-height: 520px; }
+  .hero__content { padding-block: var(--space-8); }
+  .hero__actions { gap: var(--space-2); }
+  .hero__actions .btn-aoi { width: 100%; justify-content: center; }
+
+  .section { padding-block: var(--space-7); }
+  .qa-card { padding: var(--space-4); }
+  .focus-card { padding: var(--space-5) var(--space-4); }
+  .back-to-top { inset-inline-end: var(--space-4); inset-block-end: var(--space-4); }
+}
+
+/* -------- ≥ 576px -------- */
+@media (min-width: 576px) {
+  /* nothing essential */
+}
+
+/* -------- ≥ 768px (tablet) -------- */
+@media (min-width: 768px) {
+  .hero { min-height: 600px; }
+}
+
+/* -------- ≥ 992px (desktop nav) -------- */
+@media (min-width: 992px) {
+  .main-nav { padding-block: var(--space-4); }
+  .main-menu .nav-link { padding: var(--space-2) var(--space-3) !important; }
+  .main-menu .nav-link.active::after {
+    position: absolute;
+    inset-block-end: -2px;
+    inset-inline: var(--space-3);
+    margin: 0;
+  }
+  .main-menu .nav-item { position: relative; }
+}
+
+/* -------- ≥ 1200px -------- */
+@media (min-width: 1200px) {
+  .hero__content { padding-block: 128px; }
+}
+
+/* -------- RTL/LTR direction-sensitive fixes -------- */
+html[dir="ltr"] .brand { flex-direction: row; }
+html[dir="rtl"] .brand { flex-direction: row; }
+
+/* Dropdown alignment aware of direction */
+html[dir="ltr"] .dropdown-menu-end-ltr { right: auto; left: 0; }
+html[dir="rtl"] .dropdown-menu-end-ltr { left: auto; right: 0; }
+
+/* Mobile navigation close-safe spacing */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    padding-block: var(--space-4);
+    border-top: 1px solid var(--aoi-border);
+    margin-top: var(--space-3);
+  }
+  .main-menu {
+    gap: 0;
+    margin-bottom: var(--space-4);
+  }
+  .main-menu .nav-link {
+    padding: var(--space-3) var(--space-2) !important;
+  }
+  .main-menu .nav-link.active::after {
+    display: none;
+  }
+  .nav-cta {
+    display: inline-flex;
+    margin: 0;
+    width: 100%;
+    justify-content: center;
+  }
+  .dropdown-menu {
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    padding-inline-start: var(--space-4);
+    margin-top: 0;
+  }
+}
+
+/* Ensure touch targets on mobile */
+@media (hover: none) and (pointer: coarse) {
+  .nav-link,
+  .qa-card,
+  .focus-card,
+  .btn-aoi { min-height: 44px; }
+}
+/* ============================================================
+   PHASE 2 — Responsive refinements
+   ============================================================ */
+
+@media (max-width: 991.98px) {
+  .hero-slider { min-height: 580px; }
+  .hero-slider__controls { inset-inline-end: var(--space-4); inset-block-end: var(--space-4); }
+  .hero-slider__indicators { inset-inline-start: var(--space-4); inset-block-end: var(--space-4); }
+  .hero-slider__pause { inset-inline-end: var(--space-4); inset-block-start: var(--space-4); }
+}
+
+@media (max-width: 575.98px) {
+  .hero-slider { min-height: 520px; }
+  .hero-slide__content { padding-block: var(--space-7); }
+  .hero-slide__actions .btn-aoi { width: 100%; justify-content: center; }
+  .hero-slider__btn { width: 42px; height: 42px; }
+  .hero-slider__dot { width: 28px; }
+  .hero-slider__dot.is-active { width: 40px; }
+
+  .image-card--overlay { min-height: 300px; }
+  .image-card--overlay .image-card__body { min-height: 300px; padding: var(--space-5); }
+
+  .cta-banner__inner { flex-direction: column; align-items: flex-start; text-align: start; }
+  .page-hero { min-height: 260px; }
+  .chairman-quote { font-size: var(--fs-base); padding: var(--space-4); }
+
+  .fields-toolbar { flex-direction: column; align-items: stretch; }
+  .fields-search { max-width: none; }
+}
+
+/* RTL/LTR arrow flips already handled per-component */
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-stagger > * { opacity: 1 !important; transform: none !important; transition: none !important; }
+}

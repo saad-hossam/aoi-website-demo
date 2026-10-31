@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light" data-palette="copper">
+<head>
+  <meta name="referrer" content="no-referrer" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="الهيئة العربية للتصنيع — مؤسسة صناعية وطنية. Arab Organization for Industrialization — national industrial institution." />
+  <title>الهيئة العربية للتصنيع | Arab Organization for Industrialization</title>
+
+  <link id="bootstrap-css" rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/pages.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+  <link rel="stylesheet" href="assets/css/modern.css" />
+  <link rel="stylesheet" href="assets/css/design-system.css" />
+  <link rel="stylesheet" href="assets/css/home-premium.css" />
+  <link rel="stylesheet" href="assets/css/navbar.css" />
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link" data-i18n="a11y.skip">تجاوز إلى المحتوى</a>
+
+  <!-- ============ HEADER (identical to Phase 1, root-relative paths) ============ -->
+  <header id="site-header" class="site-header" role="banner">
+    <!-- Top utility bar with social icons -->
+    <div class="utility-bar">
+      <div class="container utility-bar__inner">
+        <ul class="utility-links" role="list">
+          <li><a href="pages/contact.html" data-i18n="nav.contactCta">اتصل بنا</a></li>
+          <li><a href="pages/careers.html" data-i18n="nav.careers">الوظائف</a></li>
+          <li><a href="pages/news.html" data-i18n="utility.news">الأخبار</a></li>
+        </ul>
+        <div class="utility-actions">
+          <form class="header-search" action="pages/search.html" method="get" role="search">
+            <label class="visually-hidden" for="header-search-input">بحث</label>
+            <i class="fa-solid fa-magnifying-glass header-search__icon" aria-hidden="true"></i>
+            <input type="search" id="header-search-input" name="q" class="header-search__input"
+                   placeholder="ابحث في الموقع..." data-i18n-placeholder="utility.searchPlaceholder"
+                   autocomplete="off" />
+            <button type="submit" class="header-search__btn" aria-label="Search">
+              <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+            </button>
+          </form>
+          <ul class="social-links" role="list" aria-label="Social media">
+            <li><a href="https://www.facebook.com/AOI.OfficialPage" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.youtube.com/channel/UCg24-Vs5fWlMS3BeU2Q0wyQ" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.linkedin.com/company/arab-organization-for-industrialization" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <nav class="main-nav navbar navbar-expand-lg" aria-label="Primary">
+      <div class="container">
+        <a class="navbar-brand brand" href="index.html" aria-label="AOI Home">
+          <img class="brand__logo" src="assets/images/aoi-logo.png" alt="" width="92" height="72" />
+          <span class="brand__mark" aria-hidden="true">AOI</span>
+          <span class="brand__text">
+            <span class="brand__name" data-i18n="brand.name">الهيئة العربية للتصنيع</span>
+            <span class="brand__sub" data-i18n="brand.sub">Arab Organization for Industrialization</span>
+          </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNav"
+                aria-controls="primaryNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="primaryNav">
+          <ul class="navbar-nav main-menu mx-auto" role="list">
+            <li class="nav-item"><a class="nav-link active" href="index.html" data-i18n="nav.home">الرئيسية</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.about">عن الهيئة</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="pages/about.html" data-i18n="nav.aboutOverview">نبذة عن الهيئة</a></li>
+                <li><a class="dropdown-item" href="pages/history.html" data-i18n="nav.history">التاريخ والمحطات</a></li>
+                <li><a class="dropdown-item" href="pages/organizational-structure.html" data-i18n="nav.orgStructure">الهيكل التنظيمي</a></li>
+                <li><a class="dropdown-item" href="pages/chairman.html" data-i18n="nav.chairman">رئيس الهيئة</a></li>
+                <li><a class="dropdown-item" href="pages/former-chairmen.html" data-i18n="nav.formerChairmen">رؤساء سابقون</a></li>
+              </ul>
+            </li>
+                        <li class="nav-item"><a class="nav-link" href="pages/industrial-fields.html" data-i18n="nav.fields">المجالات</a></li>
+
+            <li class="nav-item"><a class="nav-link" href="pages/products.html" data-i18n="nav.products">المنتجات</a></li>
+            <li class="nav-item"><a class="nav-link" href="pages/projects.html" data-i18n="nav.projects">المشروعات</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.portals">المنصات</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="pages/careers.html" data-i18n="nav.careers">الوظائف</a></li>
+                <li><a class="dropdown-item" href="https://supplier.aoi.org.eg/" target="_blank" rel="noopener" data-i18n="nav.supplier">منصة الموردين</a></li>
+                <li><a class="dropdown-item" href="https://www.aoi.org.eg/pages/%D8%A7%D9%84%D9%85%D8%AF%D8%A7%D8%B1%D8%B3_%D8%A7%D9%84%D9%81%D9%86%D9%8A%D9%87" target="_blank" rel="noopener" data-i18n="nav.registration">التسجيل</a></li>
+                <li><a class="dropdown-item" href="https://www.aoi.org.eg/products?category=19" target="_blank" rel="noopener" data-i18n="nav.academy">الأكاديمية الفنية</a></li>
+              </ul>
+            </li> 
+            <li class="nav-item"><a class="nav-link" href="pages/news.html" data-i18n="nav.media">المركز الإعلامي</a></li>
+            <li class="nav-item"><a class="nav-link" href="pages/videos.html" data-i18n="nav.videos">الفيديوهات</a></li>
+            <!-- <li class="nav-item"><a class="nav-link" href="pages/capabilities.html" data-i18n="nav.capabilities">القدرات</a></li> -->
+           
+          </ul>
+          <a href="pages/contact.html" class="btn btn-aoi btn-aoi--primary nav-cta" data-i18n="nav.contactCta">اتصل بنا</a>
+          <button type="button" id="lang-toggle" class="lang-toggle lang-toggle--nav" aria-label="Switch language / تغيير اللغة">
+            <i class="fa-solid fa-globe" aria-hidden="true"></i>
+            <span id="lang-toggle-label">EN</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content" role="main">
+
+    <!-- ============ HERO SLIDER ============ -->
+    <section class="hero-slider" aria-roledescription="carousel" aria-label="Featured highlights">
+      <div class="hero-slider__progress" aria-hidden="true">
+        <div class="hero-slider__progress-bar" id="hero-progress"></div>
+      </div>
+
+      <button type="button" class="hero-slider__pause" id="hero-pause" aria-label="Pause slideshow" aria-pressed="false">
+        <i class="fa-solid fa-pause" aria-hidden="true"></i>
+      </button>
+
+      <div class="hero-slider__slides" id="hero-slides">
+        <!-- Slide 1 -->
+        <article class="hero-slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 3">
+          <div class="hero-slide__bg" style="background-image:url('https://www.aoi.org.eg/storage/media/7505/Gemini_Generated_Image_1p1m8q1p1m8q1p1m-%281%29.png')"></div>
+          <div class="hero-slide__overlay"></div>
+          <div class="container hero-slide__content">
+            <span class="hero-slide__eyebrow" data-i18n="hero.s1.eyebrow">التصنيع الوطني · الابتكار · الجودة</span>
+            <h1 class="hero-slide__title" data-i18n="hero.s1.title">نبني صناعةً وطنيةً برؤيةٍ عالمية</h1>
+            <p class="hero-slide__lead" data-i18n="hero.s1.lead">مؤسسة صناعية رائدة تجمع بين الخبرة الهندسية والتقنيات الحديثة لتقديم حلول صناعية موثوقة تخدم التنمية المستدامة.</p>
+            <div class="hero-slide__actions">
+              <a href="pages/about.html" class="btn btn-aoi btn-aoi--primary btn-lg" data-i18n="hero.ctaPrimary">تعرّف على الهيئة</a>
+              <a href="pages/industrial-fields.html" class="btn btn-aoi btn-aoi--ghost btn-lg" data-i18n="hero.ctaSecondary">استكشف المجالات الصناعية</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Slide 2 -->
+        <article class="hero-slide" role="group" aria-roledescription="slide" aria-label="2 of 3" aria-hidden="true">
+          <div class="hero-slide__bg" style="background-image:url('https://www.aoi.org.eg/storage/media/6280/DSC_0908.jpg')"></div>
+          <div class="hero-slide__overlay"></div>
+          <div class="container hero-slide__content">
+            <span class="hero-slide__eyebrow" data-i18n="hero.s2.eyebrow">قدرات تصنيعية متكاملة</span>
+            <h2 class="hero-slide__title" data-i18n="hero.s2.title">حلول صناعية تُبنى على خبرة هندسية</h2>
+            <p class="hero-slide__lead" data-i18n="hero.s2.lead">منظومة إنتاجية وهندسية متكاملة تخدم قطاعات متعددة، مدعومة بمعايير جودة صارمة ورؤية تهدف إلى تعزيز التصنيع المحلي.</p>
+            <div class="hero-slide__actions">
+              <a href="pages/capabilities.html" class="btn btn-aoi btn-aoi--primary btn-lg" data-i18n="hero.s2.cta">استكشف القدرات</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Slide 3 -->
+        <article class="hero-slide" role="group" aria-roledescription="slide" aria-label="3 of 3" aria-hidden="true">
+          <div class="hero-slide__bg" style="background-image:url('https://www.aoi.org.eg/storage/media/5388/dahab.png')"></div>
+          <div class="hero-slide__overlay"></div>
+          <div class="container hero-slide__content">
+            <span class="hero-slide__eyebrow" data-i18n="hero.s3.eyebrow">شراكة مؤسسية</span>
+            <h2 class="hero-slide__title" data-i18n="hero.s3.title">معًا نصنع مستقبل الصناعة الوطنية</h2>
+            <p class="hero-slide__lead" data-i18n="hero.s3.lead">نواصل بناء شراكات مؤسسية ومسارات تعاون تُسهم في دعم التنمية الصناعية المستدامة.</p>
+            <div class="hero-slide__actions">
+              <a href="pages/contact.html" class="btn btn-aoi btn-aoi--primary btn-lg" data-i18n="hero.s3.cta">تواصل معنا</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="hero-slider__indicators" role="tablist" aria-label="Slides">
+        <button type="button" class="hero-slider__dot is-active" aria-label="Slide 1" aria-selected="true" data-slide="0"></button>
+        <button type="button" class="hero-slider__dot" aria-label="Slide 2" aria-selected="false" data-slide="1"></button>
+        <button type="button" class="hero-slider__dot" aria-label="Slide 3" aria-selected="false" data-slide="2"></button>
+      </div>
+
+      <div class="hero-slider__controls">
+        <button type="button" class="hero-slider__btn" id="hero-prev" aria-label="Previous slide">
+          <i class="fa-solid fa-chevron-right" data-arrow aria-hidden="true"></i>
+        </button>
+        <button type="button" class="hero-slider__btn" id="hero-next" aria-label="Next slide">
+          <i class="fa-solid fa-chevron-left" data-arrow aria-hidden="true"></i>
+        </button>
+      </div>
+    </section>
+
+  
+
+   
+    <!-- ============ ABOUT PREVIEW ============ -->
+    <section class="section section--about reveal" aria-labelledby="about-title">
+      <div class="container section-shell">
+        <div class="row align-items-center g-5">
+          <div class="col-12 col-lg-6">
+            <div class="media-frame media-frame--gold">
+              <img
+                src="https://www.aoi.org.eg/storage/media/6280/DSC_0908.jpg"
+                alt="الهيئة العربية للتصنيع"
+                class="media-frame__img"
+                loading="lazy"
+                referrerpolicy="no-referrer"
+                onerror="this.style.display='none';this.nextElementSibling.hidden=false;"
+              />
+              <div class="media-frame__placeholder" hidden>
+                <i class="fa-solid fa-industry"></i>
+                <span data-i18n="about.imagePlaceholder">صورة توضيحية (مؤقتة)</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 section-copy">
+            <span class="section-index" aria-hidden="true">01</span>
+            <span class="eyebrow" data-i18n="about.eyebrow">عن الهيئة</span>
+            <h2 id="about-title" class="section-title" data-i18n="about.title">خبرة صناعية وطنية</h2>
+            <p class="section-text" data-i18n="about.text1">نص توضيحي مؤقت. تُعرض هنا نبذة تعريفية عن الهيئة العربية للتصنيع، مع استبدال هذا النص لاحقًا بمحتوى رسمي معتمد.</p>
+            <p class="section-text" data-i18n="about.text2">يتمحور العمل حول التكامل بين القدرات الهندسية والتقنيات المتقدمة لخدمة خطط التنمية الصناعية.</p>
+            <a href="pages/about.html" class="link-arrow">
+              <span data-i18n="about.learnMore">اعرف المزيد</span>
+              <i class="fa-solid fa-arrow-left"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INDUSTRIAL FIELDS CAROUSEL ============ -->
+    <section class="section section--alt section--fields reveal" aria-labelledby="fields-title">
+      <div class="container section-shell">
+        <div class="section-head section-head--split">
+          <div class="section-head__copy">
+            <span class="section-index" aria-hidden="true">02</span>
+            <span class="eyebrow" data-i18n="homeFields.eyebrow">المجالات الصناعية</span>
+            <h2 id="fields-title" class="section-title" data-i18n="homeFields.title">المجالات الصناعية</h2>
+            <p class="section-lead" data-i18n="homeFields.lead">قطاعات متنوعة تخدم التنمية الصناعية الوطنية.</p>
+          </div>
+          <a href="pages/industrial-fields.html" class="link-arrow">
+            <span data-i18n="homeFields.viewAll">عرض كل المجالات</span>
+            <i class="fa-solid fa-arrow-left"></i>
+          </a>
+        </div>
+
+        <div class="fields-carousel" id="fields-carousel" aria-roledescription="carousel" aria-label="Industrial fields">
+          <button type="button" class="fields-carousel__nav fields-carousel__nav--prev" id="fields-prev" aria-label="Previous">
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </button>
+          <div class="fields-carousel__viewport">
+            <div class="fields-carousel__track" id="fields-track" role="list"></div>
+          </div>
+          <button type="button" class="fields-carousel__nav fields-carousel__nav--next" id="fields-next" aria-label="Next">
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+          </button>
+          <div class="fields-carousel__dots" id="fields-dots" role="tablist" aria-label="Slides"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURED PRODUCTS ============ -->
+    <section class="section section--products reveal" aria-labelledby="products-title">
+      <div class="container section-shell">
+        <div class="section-head section-head--split">
+          <div class="section-head__copy">
+            <span class="section-index" aria-hidden="true">03</span>
+            <span class="eyebrow" id="products-eyebrow">منتجاتنا</span>
+            <h2 id="products-title" class="section-title">منتجات الهيئة</h2>
+            <p class="section-lead">حلول ومنتجات صناعية بمعايير جودة عالية.</p>
+          </div>
+          <a href="pages/products.html" class="link-arrow">
+            <span id="products-all">عرض كل المنتجات</span>
+            <i class="fa-solid fa-arrow-left"></i>
+          </a>
+        </div>
+        <div class="row g-4 reveal-stagger"></div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURED PROJECTS ============ -->
+    <section class="section section--dark section--projects reveal" aria-labelledby="projects-title">
+      <div class="container section-shell">
+        <div class="section-head section-head--split">
+          <div class="section-head__copy">
+            <span class="section-index" aria-hidden="true">04</span>
+            <span class="eyebrow" data-i18n="homeProjects.eyebrow">مشروعات مختارة</span>
+            <h2 id="projects-title" class="section-title" data-i18n="homeProjects.title">مشروعات صناعية</h2>
+            <p class="section-lead">نماذج من المشروعات الصناعية المنفذة.</p>
+          </div>
+          <a href="#" class="link-arrow" style="color: var(--aoi-gold);">
+            <span data-i18n="homeProjects.viewAll">عرض كل المشروعات</span>
+            <i class="fa-solid fa-arrow-left"></i>
+          </a>
+        </div>
+
+        <div class="sample-tag"><i class="fa-solid fa-circle-info"></i><span data-i18n="common.sampleContent">محتوى تجريبي للعرض</span></div>
+
+        <div class="row g-4 reveal-stagger">
+          <div class="col-12 col-md-6 col-lg-4">
+            <a href="#" class="image-card image-card--overlay tilt">
+              <div class="image-card__media image-card__media--placeholder"><i class="fa-solid fa-tractor"></i></div>
+              <div class="image-card__body">
+                <span class="image-card__tag" data-i18n="common.sample">عينة</span>
+                <h3 class="image-card__title" data-i18n="homeProjects.pr1">مشروع صناعي (عينة)</h3>
+                <p class="image-card__text" data-i18n="homeProjects.pr1d">وصف تجريبي لمشروع صناعي.</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <a href="#" class="image-card image-card--overlay tilt">
+              <div class="image-card__media image-card__media--placeholder"><i class="fa-solid fa-solar-panel"></i></div>
+              <div class="image-card__body">
+                <span class="image-card__tag" data-i18n="common.sample">عينة</span>
+                <h3 class="image-card__title" data-i18n="homeProjects.pr2">مشروع صناعي (عينة)</h3>
+                <p class="image-card__text" data-i18n="homeProjects.pr2d">وصف تجريبي لمشروع صناعي.</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <a href="#" class="image-card image-card--overlay tilt">
+              <div class="image-card__media image-card__media--placeholder"><i class="fa-solid fa-ship"></i></div>
+              <div class="image-card__body">
+                <span class="image-card__tag" data-i18n="common.sample">عينة</span>
+                <h3 class="image-card__title" data-i18n="homeProjects.pr3">مشروع صناعي (عينة)</h3>
+                <p class="image-card__text" data-i18n="homeProjects.pr3d">وصف تجريبي لمشروع صناعي.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+     <!-- ============ QUICK ACCESS ============ -->
+    <section class="section section--quick reveal" aria-labelledby="quick-title">
+      <div class="container section-shell">
+        <div class="section-head section-head--center">
+          <span class="section-index" aria-hidden="true">05</span>
+          <span class="eyebrow" data-i18n="quick.eyebrow">وصول سريع</span>
+          <h2 id="quick-title" class="section-title" data-i18n="quick.title">منصات وخدمات</h2>
+          <p class="section-lead" data-i18n="quick.lead">اختصارات مباشرة لأهم المنصات والخدمات الإلكترونية.</p>
+        </div>
+        <div class="row g-4 reveal-stagger">
+          <div class="col-12 col-sm-6 col-lg-3">
+            <a href="#" class="qa-card tilt">
+              <div class="qa-card__icon"><i class="fa-solid fa-truck-field"></i></div>
+              <h3 class="qa-card__title" data-i18n="quick.supplier">منصة الموردين</h3>
+              <p class="qa-card__text" data-i18n="quick.supplierDesc">تسجيل الموردين وإدارة التوريدات.</p>
+              <span class="qa-card__arrow"><i class="fa-solid fa-arrow-left"></i></span>
+            </a>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <a href="#" class="qa-card tilt">
+              <div class="qa-card__icon"><i class="fa-solid fa-user-plus"></i></div>
+              <h3 class="qa-card__title" data-i18n="quick.registration">التسجيل</h3>
+              <p class="qa-card__text" data-i18n="quick.registrationDesc">إنشاء حساب للوصول إلى الخدمات.</p>
+              <span class="qa-card__arrow"><i class="fa-solid fa-arrow-left"></i></span>
+            </a>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <a href="#" class="qa-card tilt">
+              <div class="qa-card__icon"><i class="fa-solid fa-graduation-cap"></i></div>
+              <h3 class="qa-card__title" data-i18n="quick.academy">الأكاديمية الفنية</h3>
+              <p class="qa-card__text" data-i18n="quick.academyDesc">برامج تدريب فني ومهني متخصص.</p>
+              <span class="qa-card__arrow"><i class="fa-solid fa-arrow-left"></i></span>
+            </a>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <a href="#" class="qa-card tilt">
+              <div class="qa-card__icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+              <h3 class="qa-card__title" data-i18n="quick.products">المنتجات</h3>
+              <p class="qa-card__text" data-i18n="quick.productsDesc">تصفح كتالوج المنتجات الصناعية.</p>
+              <span class="qa-card__arrow"><i class="fa-solid fa-arrow-left"></i></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============ CAPABILITIES PREVIEW ============ -->
+    <section class="section section--capabilities reveal" aria-labelledby="cap-title">
+      <div class="container section-shell">
+        <div class="section-head section-head--center">
+          <span class="section-index" aria-hidden="true">06</span>
+          <span class="eyebrow" data-i18n="homeCap.eyebrow">القدرات</span>
+          <h2 id="cap-title" class="section-title" data-i18n="homeCap.title">قدرات تصنيعية وهندسية</h2>
+          <p class="section-lead">منظومة متكاملة من القدرات التصنيعية والهندسية.</p>
+        </div>
+        <div class="row g-4 reveal-stagger">
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="value-card">
+              <div class="value-card__icon"><i class="fa-solid fa-industry"></i></div>
+              <h3 class="value-card__title" data-i18n="homeCap.c1">التصنيع</h3>
+              <p class="value-card__text" data-i18n="homeCap.c1d">نص توضيحي مؤقت.</p>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="value-card">
+              <div class="value-card__icon"><i class="fa-solid fa-drafting-compass"></i></div>
+              <h3 class="value-card__title" data-i18n="homeCap.c2">التصميم الهندسي</h3>
+              <p class="value-card__text" data-i18n="homeCap.c2d">نص توضيحي مؤقت.</p>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="value-card">
+              <div class="value-card__icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <h3 class="value-card__title" data-i18n="homeCap.c3">ضمان الجودة</h3>
+              <p class="value-card__text" data-i18n="homeCap.c3d">نص توضيحي مؤقت.</p>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="value-card">
+              <div class="value-card__icon"><i class="fa-solid fa-helmet-safety"></i></div>
+              <h3 class="value-card__title" data-i18n="homeCap.c4">الدعم الفني</h3>
+              <p class="value-card__text" data-i18n="homeCap.c4d">نص توضيحي مؤقت.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt section--news reveal" aria-labelledby="news-title">
+      <div class="container section-shell">
+        <div class="section-head section-head--split">
+          <div class="section-head__copy">
+            <span class="section-index" aria-hidden="true">07</span>
+            <span class="eyebrow" data-i18n="news.eyebrow">المركز الإعلامي</span>
+            <h2 id="news-title" class="section-title" data-i18n="news.title">آخر الأخبار</h2>
+            <p class="section-lead">آخر المستجدات والفعاليات من الهيئة.</p>
+          </div>
+          <a href="pages/news.html" class="link-arrow">
+            <span data-i18n="news.viewAll">عرض كل الأخبار</span>
+            <i class="fa-solid fa-arrow-left"></i>
+          </a>
+        </div>
+
+        <!-- YouTube-style news: main stage + sidebar list -->
+        <div class="news-yt" id="home-news-yt" aria-live="polite">
+          <article class="news-yt__main" id="home-news-main">
+            <!-- filled by JS -->
+          </article>
+          <aside class="news-yt__sidebar" id="home-news-sidebar" aria-label="More news">
+            <!-- filled by JS -->
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA BANNER ============ -->
+    <section class="cta-banner section--cta reveal" aria-labelledby="cta-title">
+      <div class="container section-shell">
+        <div class="cta-banner__inner">
+          <div class="cta-banner__copy">
+            <span class="section-index section-index--light" aria-hidden="true">08</span>
+            <h2 id="cta-title" class="cta-banner__title" data-i18n="cta.title">هل ترغب في معرفة المزيد؟</h2>
+            <p class="cta-banner__text" data-i18n="cta.text">تواصل معنا للاستفسار عن المجالات الصناعية والخدمات.</p>
+          </div>
+          <div class="cta-banner__actions">
+            <a href="pages/contact.html" class="btn btn-aoi btn-aoi--gold btn-lg" data-i18n="cta.button">اتصل بنا</a>
+            <a href="pages/about.html" class="btn btn-aoi btn-aoi--ghost btn-lg">عن الهيئة</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER (identical to Phase 1) ============ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="row g-5 footer-grid">
+        <div class="col-12 col-lg-4">
+          <a href="index.html" class="brand brand--footer" aria-label="AOI Home">
+            <span class="brand__mark" aria-hidden="true">AOI</span>
+            <span class="brand__text">
+              <span class="brand__name" data-i18n="brand.name">الهيئة العربية للتصنيع</span>
+              <span class="brand__sub" data-i18n="brand.sub">Arab Organization for Industrialization</span>
+            </span>
+          </a>
+          <p class="footer-text" data-i18n="footer.about">مؤسسة صناعية وطنية — نص توضيحي مؤقت.</p>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h4 class="footer-title" data-i18n="footer.quickLinks">روابط سريعة</h4>
+          <ul class="footer-links" role="list">
+            <li><a href="pages/about.html" data-i18n="nav.about">عن الهيئة</a></li>
+            <li><a href="pages/industrial-fields.html" data-i18n="nav.fields">المجالات الصناعية</a></li>
+            <li><a href="pages/products.html" data-i18n="nav.products">المنتجات</a></li>
+            <li><a href="pages/projects.html" data-i18n="nav.projects">المشروعات</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h4 class="footer-title" data-i18n="footer.media">المركز الإعلامي</h4>
+          <ul class="footer-links" role="list">
+            <li><a href="pages/news.html" data-i18n="utility.news">الأخبار</a></li>
+            <li><a href="pages/videos.html" data-i18n="utility.videos">الفيديوهات</a></li>
+            <li><a href="pages/capabilities.html" data-i18n="nav.capabilities">القدرات</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-lg-4">
+          <h4 class="footer-title" data-i18n="footer.contact">تواصل</h4>
+          <ul class="footer-contact" role="list">
+            <li><i class="fa-solid fa-location-dot"></i> <span data-i18n="footer.address">العنوان (مؤقت)</span></li>
+            <li><i class="fa-solid fa-phone"></i> <span data-i18n="footer.phone">الهاتف (مؤقت)</span></li>
+            <li><i class="fa-solid fa-envelope"></i> <span data-i18n="footer.email">البريد (مؤقت)</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer.copyright">© 2025 الهيئة العربية للتصنيع — المرحلة الثانية.</p>
+      </div>
+    </div>
+  </footer>
+
+  
+  <!-- Color palette side panel -->
+  <button type="button" id="palette-fab" class="palette-fab" aria-label="Choose color palette / اختيار ألوان الموقع" aria-expanded="false" aria-controls="palette-panel">
+    <span class="palette-fab__swatch" aria-hidden="true"></span>
+    <i class="fa-solid fa-palette" aria-hidden="true"></i>
+  </button>
+  <div id="palette-panel" class="palette-panel" role="dialog" aria-modal="true" aria-label="Color palettes" hidden>
+    <div class="palette-panel__backdrop" data-palette-close></div>
+    <aside class="palette-panel__drawer" aria-labelledby="palette-panel-title">
+      <div class="palette-panel__head">
+        <h2 id="palette-panel-title" class="palette-panel__title">ألوان الموقع</h2>
+        <button type="button" class="palette-panel__close" data-palette-close aria-label="Close">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+      <ul class="palette-panel__list" role="list">
+        <li><button type="button" class="palette-option" data-palette="copper" aria-pressed="true"><span class="swatch swatch--copper" aria-hidden="true"></span><span class="palette-option__text"><strong>نحاسي</strong><small>Copper</small></span></button></li>
+        <li><button type="button" class="palette-option" data-palette="classic" aria-pressed="false"><span class="swatch swatch--classic" aria-hidden="true"></span><span class="palette-option__text"><strong>كلاسيكي</strong><small>Classic</small></span></button></li>
+        <li><button type="button" class="palette-option" data-palette="teal" aria-pressed="false"><span class="swatch swatch--teal" aria-hidden="true"></span><span class="palette-option__text"><strong>فيروزي</strong><small>Teal</small></span></button></li>
+        <li><button type="button" class="palette-option" data-palette="emerald" aria-pressed="false"><span class="swatch swatch--emerald" aria-hidden="true"></span><span class="palette-option__text"><strong>زمردي</strong><small>Emerald</small></span></button></li>
+        <li><button type="button" class="palette-option" data-palette="royal" aria-pressed="false"><span class="swatch swatch--royal" aria-hidden="true"></span><span class="palette-option__text"><strong>ملكي</strong><small>Royal</small></span></button></li>
+        <li><button type="button" class="palette-option" data-palette="midnight" aria-pressed="false"><span class="swatch swatch--midnight" aria-hidden="true"></span><span class="palette-option__text"><strong>ليلي</strong><small>Midnight</small></span></button></li>
+      </ul>
+    </aside>
+  </div>
+
+  <button type="button" id="back-to-top" class="back-to-top" aria-label="Back to top" hidden>
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/data/industrial-fields.js"></script>
+  <script src="assets/js/data/home-fields.js"></script>
+  <script src="assets/js/data/products.js"></script>
+  <script src="assets/js/data/projects.js"></script>
+  <script src="assets/js/data/news.js"></script>
+  <script src="assets/js/data/contact-info.js"></script>
+  <script src="assets/js/data/hero-slides.js"></script>
+  <script src="assets/js/settings.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/navbar.js"></script>
+  <script src="assets/js/home.js"></script>
+  <script src="assets/js/home-premium.js" defer></script>
+  <script src="assets/js/home-data.js"></script>
+  <script src="assets/js/fields-carousel.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/modern.js" defer></script>
+</body>
+</html>

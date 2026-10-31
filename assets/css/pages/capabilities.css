@@ -1,0 +1,266 @@
+/* ============================================================
+   AOI Frontend — capabilities.css
+   Page-specific compositions for the Capabilities page.
+   All base components (.image-card, .value-card, .media-frame,
+   .cta-banner, .section, .section-head, .empty-state) come from
+   style.css. This file only adds layout helpers specific to this
+   page.
+   ============================================================ */
+
+/* ---------- Overview two-column layout ---------- */
+.cap-overview {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  align-items: center;
+}
+@media (min-width: 992px) {
+  .cap-overview { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: var(--space-7); }
+}
+.cap-overview__media {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--aoi-navy), var(--aoi-primary-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 3rem;
+  box-shadow: var(--aoi-shadow-md);
+  position: relative;
+}
+.cap-overview__media img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.cap-overview__media::after {
+  content: "";
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline: 0;
+  height: 45%;
+  background: linear-gradient(to top, rgba(17, 18, 20, 0.35), transparent);
+  pointer-events: none;
+}
+
+/* ---------- Highlights list (from verified content only) ---------- */
+.cap-highlights {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-5) 0 0;
+  display: grid;
+  gap: var(--space-3);
+}
+.cap-highlights li {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  color: var(--aoi-text);
+  font-size: var(--fs-base);
+  line-height: 1.7;
+}
+.cap-highlights li::before {
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: var(--aoi-gold);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+/* ---------- Capability category cards ---------- */
+/* Uses .image-card from style.css. Adds a light icon overlay so
+   the card still reads clearly when no image is available. */
+
+.cap-card__media {
+  aspect-ratio: 16 / 10;
+  position: relative;
+  background: linear-gradient(135deg, var(--aoi-navy), var(--aoi-primary-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 2.5rem;
+  overflow: hidden;
+}
+.cap-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 900ms ease;
+}
+.image-card:hover .cap-card__media img { transform: scale(1.06); }
+
+/* Themed accent stripe on the left edge (RTL-aware) */
+.cap-card {
+  position: relative;
+}
+.cap-card::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block: 0;
+  width: 3px;
+  background: var(--aoi-gold);
+  opacity: 0;
+  transition: opacity var(--t-base);
+  z-index: 2;
+}
+.cap-card:hover::before,
+.cap-card:focus-visible::before { opacity: 1; }
+
+/* ---------- Editorial sections (deep page content) ---------- */
+.cap-block {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  align-items: start;
+}
+@media (min-width: 992px) {
+  .cap-block { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--space-7); }
+  .cap-block--reverse { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+  .cap-block--reverse .cap-block__text { order: 2; }
+  .cap-block--reverse .cap-block__side { order: 1; }
+}
+.cap-block + .cap-block { margin-top: var(--space-7); }
+.cap-block__title {
+  font-size: clamp(1.375rem, 1.1rem + 0.9vw, 1.75rem);
+  font-weight: 800;
+  margin: 0 0 var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+.cap-block__title i {
+  color: var(--aoi-gold);
+  font-size: 1rem;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: rgba(212, 166, 79, 0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.cap-block__text p {
+  color: var(--aoi-text);
+  font-size: var(--fs-base);
+  line-height: 1.8;
+  margin: 0 0 var(--space-4);
+}
+.cap-block__side {
+  background: var(--aoi-light);
+  border: 1px solid var(--aoi-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+}
+.cap-block__side-title {
+  font-size: var(--fs-sm);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--aoi-muted);
+  margin: 0 0 var(--space-3);
+}
+.cap-block__side ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--space-2);
+}
+.cap-block__side li {
+  color: var(--aoi-text);
+  font-size: var(--fs-sm);
+  line-height: 1.7;
+  display: flex;
+  gap: var(--space-2);
+  align-items: flex-start;
+}
+.cap-block__side li::before {
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: var(--aoi-gold);
+  flex-shrink: 0;
+  margin-top: 4px;
+  font-size: 0.75rem;
+}
+
+/* ---------- Cross-link panel ---------- */
+.cap-crosslinks {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+@media (min-width: 576px) {
+  .cap-crosslinks { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 992px) {
+  .cap-crosslinks { grid-template-columns: repeat(3, 1fr); }
+}
+.cap-crosslink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid var(--aoi-border);
+  border-radius: var(--radius-md);
+  background: var(--aoi-white);
+  color: var(--aoi-text);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  transition: border-color var(--t-base), box-shadow var(--t-base), transform var(--t-base);
+}
+.cap-crosslink:hover,
+.cap-crosslink:focus-visible {
+  border-color: var(--aoi-primary);
+  box-shadow: var(--aoi-shadow-sm);
+  transform: translateY(-2px);
+  color: var(--aoi-primary);
+}
+.cap-crosslink i.cap-crosslink__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: rgba(13, 71, 161, 0.08);
+  color: var(--aoi-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.cap-crosslink i.cap-crosslink__arrow {
+  margin-inline-start: auto;
+  color: var(--aoi-gold);
+  font-size: 0.875rem;
+  transition: transform var(--t-base);
+}
+.cap-crosslink:hover i.cap-crosslink__arrow { transform: translateX(-4px); }
+html[dir="ltr"] .cap-crosslink:hover i.cap-crosslink__arrow { transform: translateX(4px); }
+
+/* ---------- Anchor nav strip (in-page jumping) ---------- */
+.cap-anchors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+.cap-anchor {
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--aoi-border);
+  border-radius: var(--radius-pill);
+  background: var(--aoi-white);
+  color: var(--aoi-text);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color var(--t-fast), color var(--t-fast), background var(--t-fast);
+}
+.cap-anchor:hover,
+.cap-anchor:focus-visible {
+  border-color: var(--aoi-primary);
+  color: var(--aoi-primary);
+}

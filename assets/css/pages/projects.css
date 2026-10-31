@@ -1,0 +1,128 @@
+/* ============================================================
+   AOI Frontend — projects.css
+   Reuses classes from products.css (.products-toolbar,
+   .products-search, .chip-row, .pager-btn, .filter-pill,
+   .products-count, .products-pagination, .products-empty)
+   so the two listings feel identical. This file adds only
+   project-specific card styling.
+   ============================================================ */
+
+/* ---------- Project card ---------- */
+.project-tile {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--aoi-white);
+  border: 1px solid var(--aoi-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  color: var(--aoi-text);
+  transition: transform var(--t-base), box-shadow var(--t-base), border-color var(--t-base);
+}
+.project-tile:hover,
+.project-tile:focus-within {
+  transform: translateY(-3px);
+  box-shadow: var(--aoi-shadow-md);
+  border-color: var(--aoi-primary);
+}
+.project-tile__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(135deg, var(--aoi-navy), var(--aoi-primary-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 2.5rem;
+  overflow: hidden;
+}
+.project-tile__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 900ms ease;
+}
+.project-tile:hover .project-tile__media img { transform: scale(1.06); }
+.project-tile__badge {
+  position: absolute;
+  inset-block-start: var(--space-3);
+  inset-inline-start: var(--space-3);
+  background: var(--aoi-navy);
+  color: #fff;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  opacity: 0.92;
+}
+.project-tile__status {
+  position: absolute;
+  inset-block-start: var(--space-3);
+  inset-inline-end: var(--space-3);
+  background: var(--aoi-gold);
+  color: var(--aoi-navy);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+}
+.project-tile__body {
+  padding: var(--space-5);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.project-tile__category {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--aoi-gold);
+}
+.project-tile__title {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.35;
+}
+.project-tile__title a { color: inherit; }
+.project-tile__title a:hover { color: var(--aoi-primary); }
+.project-tile__text {
+  color: var(--aoi-muted);
+  font-size: var(--fs-sm);
+  margin: 0;
+  flex: 1;
+}
+.project-tile__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  font-size: var(--fs-xs);
+  color: var(--aoi-muted);
+  padding-top: var(--space-3);
+  margin-top: var(--space-2);
+  border-top: 1px solid var(--aoi-border);
+}
+.project-tile__meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.project-tile__meta i { color: var(--aoi-gold); }
+.project-tile__cta {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--aoi-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+.project-tile__cta i { transition: transform var(--t-base); }
+.project-tile:hover .project-tile__cta i { transform: translateX(-4px); }
+html[dir="ltr"] .project-tile:hover .project-tile__cta i { transform: translateX(4px); }
